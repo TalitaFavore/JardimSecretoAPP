@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
+# Projeto Mobile com Expo
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este é um projeto desenvolvido com Expo e React Native.
 
-## Get started
+## Como baixar o projeto (clone)
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+No terminal, execute o comando abaixo para clonar o repositório:
 
 ```bash
-npm run reset-project
+  git clone https://github.com/TalitaFavore/JardimSecretoAPP.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Depois, acesse a pasta do projeto:
 
-## Learn more
+```bash
+   cd JardimSecretoAPP
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+    ⚠️ IMPORTANTE: Você precisa estar obrigatoriamente dentro da pasta do projeto para executar os comandos a seguir.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Instalar as dependências
 
-## Join the community
+Para instalar todas as bibliotecas necessárias, utilize:
 
-Join our community of developers creating universal apps.
+```bash
+npm install
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Rodar o projeto
+
+Para iniciar o servidor de desenvolvimento do Expo, utilize:
+
+```bash
+npx expo start
+```
+
+## Como visualizar o app
+
+Após rodar o comando acima, você terá as seguintes opções para visualizar a aplicação:
+
+- Celular: Utilize o aplicativo Expo Go (disponível na Play Store/App Store) para ler o QR Code gerado no terminal.
+
+- Navegador: apenas pressione a tecla w e o app irá abrir no navegador da sua máquina
+
+## Sobre o projeto
+
+Neste projeto, você irá praticar os seguintes conceitos:
+
+- Componentes Core: Uso de View, Text, TextInput, etc.
+
+- Hooks: Gerenciamento de estado e ciclo de vida com useState e useEffect.
+
+- Arquitetura: Organização de pastas e estrutura de telas (screens).
+
+- Navegação: Implementação de fluxos básicos entre telas.
+
+## Objetivo
+
+O objetivo principal é consolidar os conceitos básicos de desenvolvimento mobile e construir aplicações funcionais e simples utilizando o ecossistema React Native.
