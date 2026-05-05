@@ -1,31 +1,103 @@
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, } from "react-native";
 
-export default function RegisterScreen({navigation}) {
+export default function RegisterScreen({ navigation }) {
     return (
-        <View>
-            <Text>Crie sua conta</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>Crie sua conta</Text>
 
-            <Text>Nome</Text>
+            <Text style={styles.label}>Nome</Text>
 
-            <TextInput placeholder="Digite seu nome" />
+            <TextInput style={styles.input} placeholder="Digite seu nome" />
 
-            <Text>E-mail</Text>
+            <Text style={styles.label}>E-mail</Text>
 
-            <TextInput placeholder="Digite seu e-mail" />
+            <TextInput style={styles.input} placeholder="Digite seu e-mail" />
 
-            <Text>Senha</Text>
+            <Text style={styles.label}>Senha</Text>
 
-            <TextInput placeholder="Digite sua senha" />
+            <TextInput
+                style={styles.input}
+                placeholder="Digite sua senha"
+                secureTextEntry
+            />
 
-            <Text>Confirme sua senha</Text>
+            <Text style={styles.label}>Confirme sua senha</Text>
 
-            <TextInput placeholder="Digite sua senha novamente" />
+            <TextInput
+                style={styles.input}
+                placeholder="Digite sua senha novamente"
+                secureTextEntry
+            />
 
             <TouchableOpacity
+                style={styles.button}
                 onPress={() => navigation.navigate("Tabs")}
             >
-                <Text>Acessar</Text>
+                <Text style={styles.buttonText}>Acessar</Text>
             </TouchableOpacity>
+
+            <Text style={styles.loginText}>
+                Já possui uma conta?{" "}
+                <Text style={styles.loginLink} 
+                onPress={() => navigation.navigate("Login")}>
+                    Faça o login
+                </Text>
+            </Text>
+
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 20
+    },
+
+    title: {
+        fontSize: 28,
+        fontWeight: "bold",
+        marginBottom: 20
+    },
+
+    label: {
+        alignSelf: "flex-start",
+        fontWeight: "bold",
+        marginTop: 20
+    },
+
+    input: {
+        width: "100%",
+        borderWidth: 1,
+        padding: 10,
+        borderRadius: 8,
+        marginTop: 8,
+        outlineStyle: "none"
+    },
+
+    button: {
+        marginTop: 30,
+        backgroundColor: "#4A5D23",
+        paddingVertical: 12,
+        paddingHorizontal: 40,
+        borderRadius: 10,
+        width: "50%",
+    },
+
+    buttonText: {
+        color: "#fff",
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+    loginText: {
+        marginTop: 20,
+        textAlign: "center"
+    },
+
+    loginLink: {
+        color: "#4A5D23",
+        fontWeight: "bold"
+    }
+});
