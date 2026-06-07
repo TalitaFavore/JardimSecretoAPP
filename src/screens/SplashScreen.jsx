@@ -1,66 +1,104 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+// Importa os componentes utilizados na tela
+import {
+    Image,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View
+} from "react-native";
 
+// Componente da tela de Splash
 export default function SplashScreen({ navigation }) {
 
-    return (
-        <View style={styles.container}>
-            
-            <Text style={styles.title}>Jardim Secreto</Text>
-            
-            <Image source={require("../../assets/images/logo.png")} style={styles.logo} />
-            
-            <Text style={styles.subtitle}>Onde a natureza revela seus pequenos segredos</Text>
+  return (
+    <View style={styles.container}>
 
-            <TouchableOpacity 
-            style={styles.buttonCustom}
-            onPress={() => navigation.navigate("Cadastro")}
-            >
-                <Text style={styles.buttonText}>Acessar</Text>
-            </TouchableOpacity>
+      {/* Nome do aplicativo */}
+      <Text style={styles.title}>
+        Jardim Secreto
+      </Text>
 
-        </View>
-    );
+      {/* Logo do aplicativo */}
+      <Image
+        source={require("../../assets/images/logo.png")}
+        style={styles.logo}
+      />
+
+      {/* Slogan do aplicativo */}
+      <Text style={styles.subtitle}>
+        Onde a natureza revela seus pequenos segredos
+      </Text>
+
+      {/* Botão para acessar o aplicativo */}
+      <TouchableOpacity
+        style={styles.buttonCustom}
+
+        // Navega para a tela de Cadastro
+        onPress={() => navigation.navigate("Cadastro")}
+      >
+        <Text style={styles.buttonText}>
+          Acessar
+        </Text>
+      </TouchableOpacity>
+
+    </View>
+  );
 }
 
+// Arquivo responsável pelos estilos da tela
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#D9E2D5",
-        justifyContent: "center",
-        alignItems: "center",
-    },
 
-    logo: {
-        width: 180,
-        height: 180,
-    },
+  // Container principal
+  container: {
+    flex: 1, // ocupa toda a tela
 
-    title: {
-        fontSize: 26,
-        fontWeight: "bold",
-        color: "#4A5D23",
-        marginBottom: 10,
-    },
+    backgroundColor: "#D9E2D5",
 
-    subtitle: {
-        fontSize: 14,
-        color: "#4A5D23",
-        marginTop: 50,
-        marginBottom: 50,
-    },
+    justifyContent: "center", // centraliza verticalmente
 
-    buttonCustom: {
-        backgroundColor: "#4A5D23",
-        paddingVertical: 12,
-        paddingHorizontal: 30,
-        borderRadius: 10,
-        elevation: 3, // sombra Android
-    },
+    alignItems: "center", // centraliza horizontalmente
+  },
 
-    buttonText: {
-        color: "#fff",
-        fontSize: 16,
-        textAlign: "center",
-        fontWeight: "bold",
-    },
+  // Estilo da imagem
+  logo: {
+    width: 180,
+    height: 180,
+  },
+
+  // Estilo do título
+  title: {
+    fontSize: 26,
+    fontWeight: "bold",
+    color: "#4A5D23",
+    marginBottom: 10,
+  },
+
+  // Estilo do subtítulo
+  subtitle: {
+    fontSize: 14,
+    color: "#4A5D23",
+    marginTop: 50,
+    marginBottom: 50,
+  },
+
+  // Estilo do botão
+  buttonCustom: {
+    backgroundColor: "#4A5D23",
+
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+
+    borderRadius: 10,
+
+    // Adiciona sombra no Android
+    elevation: 3,
+  },
+
+  // Texto do botão
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    textAlign: "center",
+    fontWeight: "bold",
+  },
 });
