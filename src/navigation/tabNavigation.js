@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // Importa as telas que serão exibidas nas abas
 import FavoritesScreen from "../screens/FavoritesScreen";
 import HomeScreen from "../screens/HomeScreen";
+import ProductScreen from "../screens/ProductScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen from "../screens/SearchScreen";
 
@@ -29,6 +30,7 @@ export default function TabNavigation() {
 
       {/* Aba de perfil */}
       <Tab.Screen name="Perfil" component={ProfileScreen} />
+      <Tab.Screen name="Produto" component={ProductScreen} />
     </Tab.Navigator>
   );
 }
