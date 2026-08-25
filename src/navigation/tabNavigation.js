@@ -2,6 +2,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Importa as telas que serão exibidas nas abas
+import CartScreen from "../screens/CartScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import HomeScreen from "../screens/HomeScreen";
 import ProductScreen from "../screens/ProductScreen";
@@ -31,6 +32,7 @@ export default function TabNavigation() {
       {/* Aba de perfil */}
       <Tab.Screen name="Perfil" component={ProfileScreen} />
       <Tab.Screen name="Produto" component={ProductScreen} />
+      <Tab.Screen name="Carrinho" component={CartScreen} />
     </Tab.Navigator>
   );
 }
