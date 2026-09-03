@@ -1,38 +1,77 @@
-// Importa a função responsável por criar a navegação por abas
+import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-// Importa as telas que serão exibidas nas abas
 import CartScreen from "../screens/CartScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import HomeScreen from "../screens/HomeScreen";
-import ProductScreen from "../screens/ProductScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen from "../screens/SearchScreen";
 
-// Cria o objeto Tab que será utilizado para registrar as abas
 const Tab = createBottomTabNavigator();
 
-// Componente responsável pela navegação inferior do aplicativo
 export default function TabNavigation() {
   return (
-    // Navigator que gerencia as abas do aplicativo
-    <Tab.Navigator>
-      {/* Aba da tela inicial */}
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: "#4A5D23",
+        tabBarInactiveTintColor: "#999",
+      }}
+    >
       <Tab.Screen
-        name="Home" // Nome exibido na aba
-        component={HomeScreen} // Tela que será aberta
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
+        }}
       />
 
-      {/* Aba de pesquisa */}
-      <Tab.Screen name="Pesquisa" component={SearchScreen} />
+      <Tab.Screen
+        name="Pesquisa"
+        component={SearchScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons 
+            name="search-outline" 
+            size={size} 
+            color={color} />
+          ),
+        }}
+      />
 
-      {/* Aba de favoritos */}
-      <Tab.Screen name="Favoritos" component={FavoritesScreen} />
+      <Tab.Screen
+        name="Favoritos"
+        component={FavoritesScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="heart-outline" size={size} color={color} />
+          ),
+        }}
+      />
 
-      {/* Aba de perfil */}
-      <Tab.Screen name="Perfil" component={ProfileScreen} />
-      <Tab.Screen name="Produto" component={ProductScreen} />
-      <Tab.Screen name="Carrinho" component={CartScreen} />
+      <Tab.Screen
+        name="Carrinho"
+        component={CartScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="cart-outline" size={size} color={color} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Perfil"
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons 
+            name="person-outline" 
+            size={size} 
+            color={color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
